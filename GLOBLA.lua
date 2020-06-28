@@ -6278,17 +6278,7 @@ send(msg.chat_id_, msg.id_,Text)
 end
 return false
 end
-if text == 'نقل الاحصائيات' and Sudo_id(msg) then
-local Users = redis:smembers(bot_id..'User_Bot')
-local Groups = redis:smembers(bot_id..'Chek:Groups') 
-for i = 1, #Groups do
-redis:sadd('GLOBLA:'..bot_id..'Groups_Users',Groups[i])  
-end
-for i = 1, #Users do
-redis:sadd('GLOBLA:'..bot_id..'Users:ids',Users[i])  
-end
-send(msg.chat_id_, msg.id_,'👤┋بواسطة :  ['..Get_Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'GLOBLA')..')\n🔰┋تم نقل : '..#Groups..' مجموعة\n🔰┋تم نقل : '..#Users..' مشترك \n📈┋تم نقل احصائيات بالكامل')
-end
+
 ----------------------------------------------------------------------------
 if text == 'تفعيل المغادره' and Owners(msg) then  
 send(msg.chat_id_, msg.id_, '👤┋بواسطة :  ['..Get_Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'GLOBLA')..')\n☑┋ تم تفعيل المغادره')
