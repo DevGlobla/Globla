@@ -6363,8 +6363,7 @@ db = 'ملف 📁'
 elseif redis:get('GLOBLA:'..bot_id.."Add:Rd:Owners:Audio"..v..msg.chat_id_) then
 db = 'اغنيه 🎵'
 end
-text = text..""..k..">> ("..v..") » {"..db.."}\n"
-text = text.."<b>|"..k.."|</b>←("..v..") » {"..db.."}\n"
+text = text..""..k.." >> ("..v..") » {"..db.."}\n"
 end
 if #list == 0 then
 text = "✖┋ لا يوجد ردود للمدير"
@@ -6531,7 +6530,6 @@ send(msg.chat_id_, msg.id_,Text)
 end
 return false
 end
-
 ----------------------------------------------------------------------------
 if text == 'تفعيل المغادره' and Owners(msg) then  
 send(msg.chat_id_, msg.id_, '👤┋بواسطة :  ['..Get_Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'GLOBLA')..')\n☑┋ تم تفعيل المغادره')
