@@ -279,8 +279,8 @@ print('\27[0;33m>>'..[[
 # \______/ |________/ \______/ |_______/ |________/|__/  |__/   
 #------------------------------------------------------
 ]]..'\027[0m')
-print('\27[0;31mVEER_ERROR : \27[1;31m Could Not Connect To \27[0;31mRedis\27[1;31m [\27[0;31m'..err..'\27[0m\27[1;31m] \27[0m\n\n')
-print('\27[1;33mVEER_INFORMAION : \27[0;36m Run service Redis in This Command : \27[1;36m\n\n»» service redis start \27[0m\n\n\n')
+print('\27[0;31mGLOBLA_ERROR : \27[1;31m Could Not Connect To \27[0;31mRedis\27[1;31m [\27[0;31m'..err..'\27[0m\27[1;31m] \27[0m\n\n')
+print('\27[1;33mGLOBLA_INFORMAION : \27[0;36m Run service Redis in This Command : \27[1;36m\n\n»» service redis start \27[0m\n\n\n')
 local Text = "🙋🏼‍♂️¦ تحذير عزيزي المطور لقد توقف البوت في السيرفر بسبب انهيار مكتبه الريدز في السيرفر بس الضغط ع موارد السيرفر يرجى اعادة تشغيله باستخدام الامر service redis start  وارساله في الترمنال "
 if SUDO_ID then
 https.request('https://api.telegram.org/bot'..TokenBot..'/sendMessage?chat_id='..SUDO_ID..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
@@ -803,8 +803,8 @@ local function connect_tcp(socket, parameters)
 # \______/ |________/ \______/ |_______/ |________/|__/  |__/   
 #------------------------------------------------------
 ]]..'\027[0m')
-	print('\27[0;31mVEER_ERROR : \27[1;31m Could Not Connect To \27[0;31mRedis\27[1;31m '..host..':'..port..' [\27[0;31m'..err..'\27[0m\27[1;31m] \27[0m\n\n')
-	print('\27[1;33mVEER_INFORMAION : \27[0;36m Run service Redis in This Command : \27[1;36m\n\n»» service redis start \27[0m\n\n\n')
+	print('\27[0;31mGLOBLA_ERROR : \27[1;31m Could Not Connect To \27[0;31mRedis\27[1;31m '..host..':'..port..' [\27[0;31m'..err..'\27[0m\27[1;31m] \27[0m\n\n')
+	print('\27[1;33mGLOBLA_INFORMAION : \27[0;36m Run service Redis in This Command : \27[1;36m\n\n»» service redis start \27[0m\n\n\n')
 	os.exit()
     --redis.error('could not connect to '..host..':'..port..' ['..err..']')
     end 
