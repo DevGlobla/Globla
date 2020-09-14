@@ -34,8 +34,8 @@ if not redis:get(ZAINGLOBLA..":token") then
 io.write('\27[0;36m\n ܁𖠐︙Send Token For Bot : ارسل توكن البوت ... \n\027[00m')
 local token = io.read()
 if token ~= '' then
-local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
-if res ~= 200 then
+local url = json:decode(io.popen('curl https://api.telegram.org/bot'..token..'/getMe'):read("*all"))
+if not url.ok then
 io.write('\n\27[1;31m🔄︙Token Is Communication Error\n التوكن الذي ارسلته خطأ اعد المحاولة \n\27[0;39;49m')
 else
 io.write('\27[1;36m ܁𖠐︙Done Save Token : تم حفظ التوكن \n27[0;39;49m')
