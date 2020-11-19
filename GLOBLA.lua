@@ -2120,11 +2120,11 @@ if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 Text = [[
 ܁𖠐︙Welcome to GLOBLA source
   ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
- ↬   [Install source](https://t.me/GloBlA/1277)
+ ↬   [Install source](https://t.me/GloBlA/205)
  
  ↬   [Channel GLOBLA](http://t.me/GlObLa)
  
- ↬   [Group Source®](https://t.me/joinchat/PvmuHx2Jcq2abf4rrL0MLg)
+ ↬   [Group Source®](https://t.me/joinchat/PvmuH1hjmIg3F7bRGvpJMw)
  
  ↬   [Developer source](http://t.me/YYBYY) 
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
@@ -5271,10 +5271,6 @@ local text =
 send(msg.chat_id_, msg.id_,text)     
 end    
 if text ==('تثبيت') and msg.reply_to_message_id_ ~= 0 and Mod(msg) then  
-if AddChannel(msg.sender_user_id_) == false then
-send(msg.chat_id_, msg.id_,'܁𖠐︙عذراً عليك الاشتراك في القناة\n܁𖠐︙اشترك هنا @GLOBLA')
-return false
-end
 if redis:sismember('GLOBLA:'..bot_id..'lock:pin',msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"܁𖠐︙ التثبيت والغاء التثبيت تم قفله من قبل المنشئين")  
 return false  
@@ -5293,10 +5289,6 @@ end
 end,nil) 
 end
 if text == 'الغاء التثبيت' and Mod(msg) then  
-if AddChannel(msg.sender_user_id_) == false then
-send(msg.chat_id_, msg.id_,'܁𖠐︙عذراً عليك الاشتراك في القناة\n܁𖠐︙اشترك هنا @GLOBLA')
-return false
-end
 if redis:sismember('GLOBLA:'..bot_id..'lock:pin',msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"܁𖠐︙ التثبيت والغاء التثبيت تم قفله من قبل المنشئين")  
 return false  
@@ -5631,7 +5623,6 @@ end,nil)
 end
 end,nil)
 end
-
 if redis:get('GLOBLA:'..bot_id.."Set:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then 
 send(msg.chat_id_, msg.id_, "܁𖠐︙ تم الغاء حفظ القوانين") 
@@ -6349,7 +6340,6 @@ redis:del('GLOBLA:'..bot_id..'List:Owners'..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_,"܁𖠐︙ تم مسح ردود المدير")
 end
-
 if text == ("ردود المدير") and Owners(msg) then
 local list = redis:smembers('GLOBLA:'..bot_id..'List:Owners'..msg.chat_id_..'')
 text = "܁𖠐︙قائمه ردود المدير \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
