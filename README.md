@@ -33,12 +33,12 @@
 
 #  💬¦ للمشاكل والاسفسار والاقتراحات :
   
-  [ZAIN ALABDEEN](https://telegram.me/yybyy) <br>
+  [ZAIN ALABDEEN](https://telegram.me/LGlobla) <br>
   
   
 [ TEAM GLOBLA ](https://telegram.me/GLOBLA) <br>
 
 # <p align="center"> كروب دعم السورس للتكلم حول المشاكل
 
-  # <p align="center">[اضــغــط هــنــا للــدخــول للمجموعةة🃏](https://t.me/joinchat/PvmuHx2Jcq2abf4rrL0MLg)
+  # <p align="center">[اضــغــط هــنــا للــدخــول للمجموعةة🃏](https://t.me/joinchat/WGOYiC3n83TLFikX)
   
