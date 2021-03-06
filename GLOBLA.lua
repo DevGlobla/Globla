@@ -5958,6 +5958,15 @@ send(msg.chat_id_, msg.id_, '⌔︙ تم تعطيل التواصل')
 redis:set('GLOBLA:'..bot_id..'Twal:Bot', true)
 end
 ----------------------------------------------------------
+if text == 'تفعيل التاك' and Constructor(msg) then  
+send(msg.chat_id_, msg.id_, '⌔︙ تم التاك للكل')
+redis:del('GLOBLA:'..bot_id..'user:Name')
+end
+if text == 'تعطيل التاك' and Constructor(msg) then  
+send(msg.chat_id_, msg.id_, '⌔︙ تم التاك للكل')
+redis:set('GLOBLA:'..bot_id..'user:Name', true)
+end
+----------------------------------------------------------
 if text == 'تفعيل الوضع الخدمي' and Sudo_id(msg) then  
 send(msg.chat_id_, msg.id_, '⌔︙ تم تفعيل الوضع الخدمي')
 redis:del('GLOBLA:'..bot_id..'lock:Free')
