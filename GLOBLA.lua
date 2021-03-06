@@ -2120,13 +2120,13 @@ if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 Text = [[
 ⌔︙Welcome to GLOBLA source
   ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
- ↬   [Install source](https://t.me/GloBlA/205)
+ ↬   [Install source](https://t.me/GloBlA/66)
  
  ↬   [Channel GLOBLA](http://t.me/GlObLa)
  
- ↬   [Group Source®](https://t.me/joinchat/PvmuH1hjmIg3F7bRGvpJMw)
+ ↬   [Group Source®](https://t.me/joinchat/WGOYiC3n83TLFikX)
  
- ↬   [Developer source](http://t.me/YYBYY) 
+ ↬   [Developer source](http://t.me/lglobla) 
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -5959,11 +5959,11 @@ redis:set('GLOBLA:'..bot_id..'Twal:Bot', true)
 end
 ----------------------------------------------------------
 if text == 'تفعيل التاك' and Constructor(msg) then  
-send(msg.chat_id_, msg.id_, '⌔︙ تم التاك للكل')
+send(msg.chat_id_, msg.id_, '⌔︙ تم تفعيل التاك للكل')
 redis:del('GLOBLA:'..bot_id..'user:Name')
 end
 if text == 'تعطيل التاك' and Constructor(msg) then  
-send(msg.chat_id_, msg.id_, '⌔︙ تم التاك للكل')
+send(msg.chat_id_, msg.id_, '⌔︙ تم تعطيل التاك للكل')
 redis:set('GLOBLA:'..bot_id..'user:Name', true)
 end
 ----------------------------------------------------------
