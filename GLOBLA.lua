@@ -5616,7 +5616,7 @@ return false
 end
 if #admins == i then 
 local a = '\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n⌔︙ عدد البوتات التي هنا >> {'..n..'} بوت\n'
-local f = '⛑︙ عدد البوتات التي هي ادمن >> {'..t..'}\n⌔︙ ملاحضه علامة ال (🔅) تعني ان البوت ادمن \n💥'
+local f = '⛑︙ عدد البوتات التي هي ادمن >> {'..t..'}\n⌔︙ ملاحضه علامة ال (🔅) تعني ان البوت ادمن '
 send(msg.chat_id_, msg.id_, text..a..f)
 end
 end,nil)
@@ -6525,7 +6525,7 @@ return false
 end
 if text == 'بوت' then
 Namebot = (redis:get('GLOBLA:'..bot_id..'Name:Bot') or 'العالمي')
-send(msg.chat_id_, msg.id_,'كول ['..Namebot..'] 🌠') 
+send(msg.chat_id_, msg.id_,'كول ['..Namebot..'] ') 
 end
 ----------------------------------------------------------------------------
 if text == 'الاحصائيات' or text == 'المجموعات' or text == 'المشتركين' then
@@ -6982,7 +6982,6 @@ else
 send(msg.chat_id_, msg.id_,'[\n⌔︙ ايديك ← ('..msg.sender_user_id_..')\n⌔︙ معرفك ← '..username..'\n⌔︙ موقعك ← '..Get_Rutba(msg.sender_user_id_,msg.chat_id_)..'\n⌔︙ صورك ← '..photps..'\n⌔︙ تفاعلك ← '..Total_Msg(Msguser)..'\n⌔︙ رسائلك ← {'..Msguser..'}\n⌔︙ سحكاتك ← {'..edit..']}\n⌔︙ نقاطك ← {'..NUMPGAME..'}\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉')   
 end
 end
-
 end,nil)
 end,nil)
 end,nil)
@@ -8181,59 +8180,19 @@ end
 ----------------------------------------------------------------------------
 if text == 'رابط الحذف' or text == 'رابط حذف' then
 t =[[
-╗ » رابط الحذف 🔎
-╣ » فكر قبل كولشي❗️
-╝ » [هذا الرابط...](https://telegram.org/deactivate)
-‏
+- رابط الحذف 
+- فكر قبل كلشي
+------------------------
+- [هذا الرابط...](https://telegram.org/deactivate)
+
 ]]
 send(msg.chat_id_, msg.id_,t) 
 return false
 end
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 end -- Chat_Type = 'GroupBot' 
 end -- end msg
 end --end 
------------------------------------------------------------------------------------------------if text == 'منح الحظر' and tonumber(msg.reply_to_message_id_) > 0 and Constructor(msg) then   
-if text == 'منح الحظر' and tonumber(msg.reply_to_message_id_) > 0 and Constructor(msg) then   
-function by_reply(extra, result, success)   
-if not msg.can_be_deleted_ == true then   
-send(msg.chat_id_,msg.id_,"*⌔*︙*انا لست ادمن هنا يرجى ترقيتي \n👨🏻‍✈️*")   
-return false 
-end      
-if tonumber(result.sender_user_id_) == tonumber(bot_id) then    
-send(msg.chat_id_,msg.id_,"*⌔*︙*انا بوت استطيع طرد - حظر المستخدمين \n👨🏻‍✈️*")   
-return false  
-end   
-tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-redis:sadd('GLOBLA:'..bot_id..'SET:BAN'..msg.chat_id_,result.sender_user_id_)     
-usertext = '\n⌔*︙* العضو ❲ ['..data.first_name_..'](t.me/'..(data.username_ or 'GLOBLA')..') ❳ 📣┋تم منحه صلاحية ( طرد - حظر ) المستخدمين\n✓'
-send(msg.chat_id_, msg.id_, usertext)
-end,nil)   
-end   
-tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
-return false
-end
-if text == 'الغاء منح الحظر' and tonumber(msg.reply_to_message_id_) > 0 and Constructor(msg) then   
-function by_reply(extra, result, success)   
-if not msg.can_be_deleted_ == true then   
-send(msg.chat_id_,msg.id_,"*⌔*︙*انا لست ادمن هنا يرجى ترقيتي \n👨🏻‍✈️*")   
-return false 
-end      
-if tonumber(result.sender_user_id_) == tonumber(bot_id) then    
-send(msg.chat_id_,msg.id_,"*⌔*︙*انا بوت لا تستطيع منعي من الحظر - الطرد \n👨🏻‍✈️*")   
-return false  
-end   
-tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-redis:srem('GLOBLA:'..bot_id..'SET:BAN'..msg.chat_id_,result.sender_user_id_)     
-usertext = '\n⌔*︙* العضو ❲ ['..data.first_name_..'](t.me/'..(data.username_ or 'GLOBLA')..') ❳ ⌔*︙*تم الغاء منحه صلاحية ( طرد - حظر ) المستخدمين\n✓'
-send(msg.chat_id_, msg.id_, usertext)
-end,nil)   
-end   
-tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
-return false
-end
-
 function tdcli_update_callback(data)  -- clback
 if data.ID == "UpdateNewMessage" then  -- new msg
 msg = data.message_
